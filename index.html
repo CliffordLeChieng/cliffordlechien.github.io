@@ -1,9 +1,30 @@
 <!doctype html>
 <html>
   <head>
-    <title>This is the title of the webpage!</title>
+    <title>Irolluxj</title>
   </head>
   <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <h2>ATK (yahkxhk) XKTIUTZXK XKIKTZK OSVUXZGTZK</h2>
+    <input type="text" id="datepicker">
+
+    <button onclick="checkDate()">Valider</button>
+    <p id="result"></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
+    <script>
+      const date picker = new Datepicker(document.getElementById("datepicker"));
+
+      function checkDate() {
+        const selectedDate = datepicker.getDate('yyy-mm-dd');
+        const correctDate = new Date('2024-01-06');
+
+        if(selectedDate.getTime() === correctDate.getTime()) {
+          document.getElementById('result').innerText = "Tu as gagné bravo... j'ai caché ce que tu cherches derrière une des portes du placard >:D";
+        }
+        else {
+          document.getElementById('result').innerText = "Ce n'est pas la bonne date :(";
+        }
+      }
+    </script>
   </body>
 </html>
