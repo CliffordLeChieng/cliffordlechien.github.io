@@ -4,27 +4,23 @@
     <title>Irolluxj</title>
   </head>
   <body>
-    <h2>ATK (yahkxhk) XKTIUTZXK XKIKTZK OSVUXZGTZK</h2>
+    <h2>RG JGZK J'AT IGROT ZXKY OSVUXZGTZ</h2>
     <input type="date" id="datepicker">
 
-    <button onclick="checkDate()">Valider</button>
     <p id="result"></p>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
     <script>
-      const date picker = new Datepicker(document.getElementById("datepicker"));
-
-      function checkDate() {
-        const selectedDate = datepicker.getDate('yyy-mm-dd');
-        const correctDate = new Date('2024-01-06');
-
-        if(selectedDate.getTime() === correctDate.getTime()) {
-          document.getElementById('result').innerText = "Tu as gagné bravo... j'ai caché ce que tu cherches derrière une des portes du placard >:D";
-        }
-        else {
-          document.getElementById('result').innerText = "Ce n'est pas la bonne date :(";
-        }
-      }
+        document.getElementById("datepicker").addEventListener("change", function() {
+            var input = this.value;
+            var dateEntered = new Date(input);
+            var dateGoal = new Date('2024-01-06');
+            if(dateEntered > dateGoal || dateEntered < dateGoal) {
+                document.getElementById('result').innerText = "Ce n'est pas la bonne date :(";
+            }
+            else {
+                document.getElementById('result').innerText = "Tu as gagné bravo... j'ai caché ce que tu cherches derrière une des portes du placard >:D";
+            }
+        });
     </script>
   </body>
 </html>
